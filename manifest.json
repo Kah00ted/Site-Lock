@@ -1,0 +1,6 @@
+{
+    "name": "Site Lock",
+    "version": "0.0.1",
+    "description": "Lock your browser into one website",
+    "manifest_version": 2
+}
