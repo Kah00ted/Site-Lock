@@ -2,5 +2,9 @@
     "name": "Site Lock",
     "version": "0.0.1",
     "description": "Lock your browser into one website",
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
     "manifest_version": 2
 }
