@@ -1,8 +1,12 @@
+var allowedSite = "https://www.google.com/"
+
 chrome.runtime.onMessage.addListener(
     function (request, sender, sendResponse) {
         if (request.action == "testSite") {
-            alert(sender.tab.url)
-            chrome.tabs.remove(sender.tab.id);
+            if(sender.tab.url !== allowedSite){
+                alert(sender.tab.url)
+                chrome.tabs.remove(sender.tab.id);
+            }
         }
     }
 );
