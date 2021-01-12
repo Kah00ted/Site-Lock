@@ -3,6 +3,9 @@
     "version": "0.0.1",
     "description": "Lock your browser into one website",
     "permissions": ["storage", "tabs"],
+    "page_action": {
+        "default_popup": "popup.html"
+    },
     "content_scripts": [
         {
           "matches": ["<all_urls>"],
