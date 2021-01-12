@@ -1,10 +1,10 @@
 // Check whether new version is installed
 chrome.runtime.onInstalled.addListener(function(details){
-    if(details.reason == "install"){
+    if(details.reason == "install"){  //run on extension installed
         console.log("This is a first install!");
         chrome.storage.local.set({"active": false});
         chrome.storage.local.set({"lockedSite": "google.com"});
-    }else if(details.reason == "update"){
+    }else if(details.reason == "update"){  //run on extension updated
         var thisVersion = chrome.runtime.getManifest().version;
         console.log("Updated from " + details.previousVersion + " to " + thisVersion + "!");
     }
