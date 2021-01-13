@@ -17,7 +17,6 @@ document.getElementById('siteInput').onchange = function () {
 
 $(".onOffSlider").click(function () {
     chrome.storage.local.get(['active'], function (result) {
-        alert("hello")
         if (result.active == true) {
             chrome.storage.local.set({ "active": false });
         } else if (result.active == false) {
