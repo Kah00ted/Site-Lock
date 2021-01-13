@@ -6,11 +6,22 @@ chrome.storage.local.get(['active'], function (result) {
     }
 });
 
-chrome.storage.local.get(['lockedSite'], function(result) {
+chrome.storage.local.get(['lockedSite'], function (result) {
     document.getElementById("siteInput").value = result.lockedSite
 });
 
-document.getElementById('siteInput').onchange = function() {
+document.getElementById('siteInput').onchange = function () {
     var newSite = document.getElementById("siteInput").value
-    chrome.storage.local.set({"lockedSite": newSite});
+    chrome.storage.local.set({ "lockedSite": newSite });
 };
+
+$(".onOffSlider").click(function () {
+    chrome.storage.local.get(['active'], function (result) {
+        alert("hello")
+        if (result.active == true) {
+            chrome.storage.local.set({ "active": false });
+        } else if (result.active == false) {
+            chrome.storage.local.set({ "active": true });
+        }
+    });
+});
