@@ -10,7 +10,7 @@ chrome.runtime.onInstalled.addListener(function (details) {
     }
 });
 
-chrome.storage.local.set({ "active": true });
+//chrome.storage.local.set({ "active": true });
 
 chrome.runtime.onMessage.addListener(
     function (request, sender, sendResponse) {
